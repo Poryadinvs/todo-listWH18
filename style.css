@@ -1,0 +1,25 @@
+@import "https://cdn.jsdelivr.net/npm/bulma@1.0.0/css/bulma.min.css";
+
+.is-hidden {
+    display: none !important;
+}
+
+.todos {
+    height: 40vh;
+    overflow-y: scroll;
+}
+
+.todo {
+    border-bottom: 1px solid lightgrey;
+    padding: 10px 0;
+}
+
+.is-done {
+    text-decoration: line-through;
+    color: blue;
+}
+
+form {
+    display: flex;
+    gap: 10px;
+}

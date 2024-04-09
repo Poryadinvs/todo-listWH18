@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css">
+    <script type="module" src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.esm.js"></script>
+    <script nomodule src="https://unpkg.com/ionicons@7.1.0/dist/ionicons/ionicons.js"></script>
+</head>
+
+<body>
+    <div class="modal">
+        <div class="modal-background"></div>
+        <div class="modal-content">
+            <div class="box">
+                <div class="title has-text-centered"></div>
+                <div class="buttons is-centered"></div>
+            </div>
+        </div>
+        <button class="modal-close is-large" aria-label="close"></button>
+    </div>
+
+    <div class="hero is-fullheight">
+        <div class="hero-body">
+            <div class="container">
+                <div class="columns is-centered">
+                    <div class="column is-5">
+                        <div class="box">
+                            <form action="">
+                                <input required type="text" class="input" placeholder="Введите текст задачи: ">
+                                <button type="submit" class="button is-success">
+                                    <ion-icon class="is-size-4 has-text-white" name="add-outline"></ion-icon>
+                                </button>
+                                <div class="dropdown">
+                                    <div class="dropdown-trigger">
+                                        <a class="button is-link">...</a>
+                                    </div>
+                                    <div class="dropdown-menu">
+                                        <div class="dropdown-content">
+                                            <div class="dropdown-item is-clickable" onclick="deleteAll()">
+                                                Удалить все
+                                            </div>
+                                            <div class="dropdown-item is-clickable" onclick="finishAll()">
+                                                Завершить все
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </form>
+
+                        </div>
+                        <div class="box todos-container">
+                            <div class="title is-4">
+                                Задач: <span class="todo-counter">0</span>
+                            </div>
+                            <hr>
+                            <div class="todos">
+                                <div class="todo is-hidden is-flex is-justify-content-space-between">
+                                    <div class="is-flex is-align-items-center">
+                                        <div class="status mr-5">
+                                            <input type="checkbox" class="checkbox"
+                                                onchange="toggleStatus(this.dataset.id)">
+                                        </div>
+                                        <div class="text is-size-5 is-clickable">
+                                            Todo #1
+                                        </div>
+                                    </div>
+                                    <div class="buttons">
+                                        <button class="button edit is-info is-small"
+                                            onclick="editTodo(this.dataset.id)">
+                                            <ion-icon class="is-size-6 has-text-white" name="create-outline"></ion-icon>
+                                        </button>
+                                        <button class="button remove is-danger is-small"
+                                            onclick="deleteTodo(this.dataset.id)">
+                                            <ion-icon class="is-size-6 has-text-white" name="trash-outline"></ion-icon>
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="box">
+                            <div class="buttons is-centered">
+                                <button class="button is-success" onclick="todoFilter(this.textContent)">Все</button>
+                                <button class="button is-info"
+                                    onclick="todoFilter(this.textContent)">Завершенные</button>
+                                <button class="button is-warning"
+                                    onclick="todoFilter(this.textContent)">Открытые</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>
